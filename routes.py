@@ -2,7 +2,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 # two decorators, same function
-@app.route('/')
+#@app.route('/')
 @app.route('/index.html')
 def index():
     return render_template('index.html', the_title='Tiger Home Page')
@@ -14,6 +14,10 @@ def symbol():
 @app.route('/myth.html')
 def myth():
     return render_template('myth.html', the_title='Tiger in Myth and Legend')
+@app.route('/')
+@app.route('/register-form.html')
+def form():
+    return render_template('register-form.html', the_title='registration form')
 
 if __name__ == '__main__':
     app.run(debug=True)
